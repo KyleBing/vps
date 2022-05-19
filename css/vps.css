@@ -65,6 +65,10 @@ tt {
   display: none;
 }
 
+div[v-cloak] {
+  display: none;
+}
+
 body {
   background-color: #F4F4F4;
   width: 500px;

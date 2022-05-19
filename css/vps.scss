@@ -6,6 +6,9 @@ $green:   #52C58B;
 
 $chart_height:150px;
 
+div[v-cloak]{
+  display: none;
+}
 
 @mixin bdrs($radius){
   -webkit-border-radius: $radius;
