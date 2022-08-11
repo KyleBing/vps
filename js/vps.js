@@ -3,35 +3,42 @@ window.onload = () => {
     document.body.style.height = innerHeight + 'px';
 }
 
-
-
-let app = new Vue({
+const app = Vue.createApp({
     el: '.container',
-    data: {
-        percentageDisk: 0,
-        percentageMemory: 0,
-        percentageData: 0,
+    data() {
+        return {
+            percentageDisk: 0,
+            percentageMemory: 0,
+            percentageData: 0,
 
-        info: null,
+            info: null,
 
-        dataUsage: 0,
-        dataFull: 0,
-        dataRemain: 0,
-        diskUsage: 0,
-        diskFull: 0,
-        diskRemain: 0,
-        memLeft: 0,
-        memFull: 0,
-        memUsage: 0,
+            dataUsage: 0,
+            dataFull: 0,
+            dataRemain: 0,
+            diskUsage: 0,
+            diskFull: 0,
+            diskRemain: 0,
+            memLeft: 0,
+            memFull: 0,
+            memUsage: 0,
+
+            isLoading: false,
+        }
     },
     mounted(){
         this.getVpsInfo()
     },
     methods: {
         getVpsInfo(){
-            const url = '../../portal/vps'
+            this.isLoading = true
+            // const url = '../../portal/vps'
+            const url = 'https://kylebing.cn/portal/vps'
             axios.get(url)
                 .then(res => {
+                    // stop loading animation
+                    this.isLoading = false
+
                     this.info = res.data.data
                     this.info.data_next_reset = dateFormatter(new Date(this.info.data_next_reset * 1000), 'yyyy-MM-dd')
 
@@ -61,12 +68,14 @@ let app = new Vue({
 
                 })
                 .catch(err => {
+                    // stop loading animation
+                    this.isLoading = false
                 })
         },
 
 
     }
-})
+}).mount('.container')
 
 function dateFormatter(date, formatString) {
     formatString = formatString || 'yyyy-MM-dd hh:mm:ss'
@@ -89,3 +98,4 @@ function dateFormatter(date, formatString) {
     }
     return formatString
 }
+
