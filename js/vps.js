@@ -32,8 +32,8 @@ const app = Vue.createApp({
     methods: {
         getVpsInfo(){
             this.isLoading = true
-            // const url = '../../portal/vps'
-            const url = 'https://kylebing.cn/portal/vps'
+            const url = '../../portal/vps'
+            // const url = 'https://kylebing.cn/portal/vps'
             axios.get(url)
                 .then(res => {
                     // stop loading animation
