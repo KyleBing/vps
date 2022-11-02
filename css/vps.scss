@@ -42,11 +42,7 @@ body{
     width: 500px;
     .chart{
       padding: 50px 20px;
-      @include bdrs(10px 10px 0 0)
-    }
-    .detail{
-      background-color: #F4F4F4;
-      @include bdrs(0 0 10px 10px)
+      @include bdrs(10px)
     }
   }
 }
@@ -59,9 +55,10 @@ body{
   padding: 30px 15px;
   background-color: #fff;
   display: flex;
+  justify-content: center;
+  align-items: center;
 
   .chart-item{
-    width: 33.33%;
     .chart-pic{
       margin:0 auto 10px;
       border: 1px solid;
@@ -115,21 +112,6 @@ body{
   }
 }
 
-.detail{
-  font-size: 13px;
-  padding: 20px;
-  li{
-    line-height: 200%;
-    display: block;
-  }
-  .vps-key{
-    color: #4A4A4A;
-  }
-  .vps-value{
-    float: right;
-    color: #797979;
-  }
-}
 
 
 // animation

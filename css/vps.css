@@ -87,24 +87,17 @@ body {
   }
   .container .chart {
     padding: 50px 20px;
-    -webkit-border-radius: 10px 10px 0 0;
-    -moz-border-radius: 10px 10px 0 0;
-    border-radius: 10px 10px 0 0;
-  }
-  .container .detail {
-    background-color: #F4F4F4;
-    -webkit-border-radius: 0 0 10px 10px;
-    -moz-border-radius: 0 0 10px 10px;
-    border-radius: 0 0 10px 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
   }
 }
 .chart {
   padding: 30px 15px;
   background-color: #fff;
   display: flex;
-}
-.chart .chart-item {
-  width: 33.33%;
+  justify-content: center;
+  align-items: center;
 }
 .chart .chart-item .chart-pic {
   margin: 0 auto 10px;
@@ -154,22 +147,6 @@ body {
   font-family: "PTSans", sans-serif;
   text-align: center;
   color: #9B9B9B;
-}
-
-.detail {
-  font-size: 13px;
-  padding: 20px;
-}
-.detail li {
-  line-height: 200%;
-  display: block;
-}
-.detail .vps-key {
-  color: #4A4A4A;
-}
-.detail .vps-value {
-  float: right;
-  color: #797979;
 }
 
 .loading {
